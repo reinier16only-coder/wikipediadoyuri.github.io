@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Wikipédia do Yuri</title>
+
+<style>
+
+body{
+    margin:0;
+    background:#f8f9fa;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+header{
+    background:white;
+    border-bottom:1px solid #ccc;
+    padding:15px;
+}
+
+header h1{
+    margin:0;
+    font-size:30px;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:25px auto;
+    display:flex;
+    gap:20px;
+}
+
+aside{
+    width:260px;
+    background:white;
+    border:1px solid #ccc;
+    padding:15px;
+    height:fit-content;
+}
+
+main{
+    flex:1;
+    background:white;
+    border:1px solid #ccc;
+    padding:25px;
+}
+
+table{
+    width:100%;
+}
+
+td{
+    padding:8px;
+    border-bottom:1px solid #ddd;
+}
+
+button{
+    margin-top:15px;
+    padding:10px 20px;
+    cursor:pointer;
+}
+
+#frase{
+    margin-top:15px;
+    font-size:20px;
+    color:#b00020;
+    font-weight:bold;
+}
+
+.galeria img{
+    width:220px;
+    margin:10px;
+    border:1px solid #aaa;
+}
+
+.aviso{
+    background:#fff3cd;
+    border:1px solid #ffe69c;
+    padding:10px;
+    margin-bottom:20px;
+}
+
+.cabecalho{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo h1{
+margin:0;
+font-family:Georgia;
+font-size:34px;
+}
+
+.logo p{
+margin:0;
+color:gray;
+font-size:13px;
+}
+
+.busca input{
+padding:8px;
+width:250px;
+}
+
+.busca button{
+padding:8px 15px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="cabecalho">
+
+<div class="logo">
+
+<h1>Wikipédia</h1>
+
+<p>A enciclopédia livre (mais ou menos)</p>
+
+</div>
+
+<div class="busca">
+
+<input
+id="pesquisa"
+type="text"
+placeholder="Pesquisar na Wikipédia do Yuri">
+
+<button onclick="pesquisar()">
+Pesquisar
+</button>
+
+</div>
+
+</div>
+
+</header>
+
+<div class="container">
+
+<aside>
+
+<h2>Yuri</h2>
+
+<p><b>Status:</b> Em observação.</p>
+
+<table>
+
+<tr>
+<td><b>Espécie</b></td>
+<td>Homo Discordensis</td>
+</tr>
+
+<tr>
+<td><b>Profissão</b></td>
+<td>Falar sem contexto</td>
+</tr>
+
+<tr>
+<td><b>Precisão</b></td>
+<td>7%</td>
+</tr>
+
+<tr>
+<td><b>Confiança</b></td>
+<td>100%</td>
+</tr>
+
+<tr>
+<td><b>Inimigo</b></td>
+<td>O contexto</td>
+</tr>
+
+</table>
+
+</aside>
+
+<main>
+
+<div class="aviso">
+<b>⚠️ Paródia.</b> Este site foi criado apenas como uma brincadeira entre amigos.
+</div>
+
+<h1>Yuri</h1>
+<p style="color:gray;font-size:14px;">
+
+Origem: Call do Discord • Espécie:
+Homo Discordensis • Atualizado recentemente
+
+</p>
+
+<p>
+Yuri é conhecido por falar frases extremamente aleatórias durante chamadas no Discord.
+Pesquisadores tentam entender suas mensagens há anos.
+</p>
+
+<h2>Frases históricas</h2>
+
+<ul>
+
+<li>"eu já puxei todos cabelos da minhas amigas"</li>
+
+<li>"mt bom"</li>
+
+<li>"sei nada"</li>
+
+<li>"só pra dar fez um barulho tão gostoso"</li>
+
+</ul>
+
+<button onclick="frase()">
+🎲 Gerar frase aleatória
+</button>
+
+<p id="frase"></p>
+
+
+<h2>Arquivo de Evidências</h2>
+
+
+<div class="galeria">
+
+<img src="provas/prova1.png">
+
+<img src="provas/prova2.png">
+
+<img src="provas/prova3.png">
+
+<img src="provas/prova4.png">
+
+<img src="provas/prova5.png">
+
+</div>
+
+</main>
+
+</div>
+
+<h2>Conquistas</h2>
+
+<ul>
+
+<li>🏆 Mestre das frases sem contexto</li>
+
+<li>🥇 100% confiança</li>
+
+<li>🎮 Derrota memorável no eFootball</li>
+
+<li>😈 Eleito "Mais que sim" na votação "Yuri é o capeta?"</li>
+
+</ul>
+
+<script>
+
+const frases = [
+
+"eu já puxei todos cabelos da minhas amigas",
+
+"só pra dar fez um barulho tão gostoso",
+
+"mt bom",
+
+"sei nada",
+
+"Pesquisadores seguem sem contexto."
+
+];
+
+function frase(){
+
+let n=Math.floor(Math.random()*frases.length);
+
+document.getElementById("frase").innerHTML=frases[n];
+
+}
+
+function pesquisar(){
+
+let texto=document
+.getElementById("pesquisa")
+.value
+.toLowerCase();
+
+if(texto.includes("cabelo")){
+
+document
+.getElementById("frase")
+.innerHTML="Resultado encontrado: 'eu já puxei todos cabelos da minhas amigas'";
+
+}
+
+else if(texto.includes("capeta")){
+
+document
+.getElementById("frase")
+.innerHTML="Resultado encontrado: Yuri.";
+
+}
+
+else if(texto.includes("efootball")){
+
+document
+.getElementById("frase")
+.innerHTML="Resultado encontrado: derrota histórica por 6x2.";
+
+}
+
+else{
+
+document
+.getElementById("frase")
+.innerHTML="Nenhum artigo encontrado.";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
